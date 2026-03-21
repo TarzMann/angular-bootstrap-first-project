@@ -1,10 +1,59 @@
+/* Google Fonts — Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* Global styles — keep minimal; Bootstrap utilities handle most styling */
+
+/* ─── Brand Primitive Ramps ─────────────────────────────────────────────────
+   Raw color scales — no semantic meaning at this layer.
+   Use the semantic aliases below to map these into Bootstrap/component tokens.
+   ────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Brand Slate */
+  --brand-slate-25:  #F7F9FA;
+  --brand-slate-50:  #F0F3F5;
+  --brand-slate-100: #DDE3E8;
+  --brand-slate-200: #B8C4CE;
+  --brand-slate-300: #8FA3B1;
+  --brand-slate-400: #667F90;
+  --brand-slate-500: #4A6274;
+  --brand-slate-600: #364D5C;
+  --brand-slate-700: #253A47;
+  --brand-slate-800: #172833;
+  --brand-slate-900: #0D1A22;
+
+  /* Brand Teal */
+  --brand-teal-50:  #F2FBFA;
+  --brand-teal-100: #C2EEEA;
+  --brand-teal-200: #8DDDD6;
+  --brand-teal-300: #52C9BF;
+  --brand-teal-400: #29B5A8;
+  --brand-teal-500: #1A9E92;
+  --brand-teal-600: #11847A;
+  --brand-teal-700: #0B6960;
+  --brand-teal-800: #074F48;
+  --brand-teal-900: #03332E;
+
+  /* ─── Semantic Aliases ─────────────────────────────────────────────────────
+     Map primitives to purpose. Override Bootstrap utilities by reassigning
+     these tokens (e.g. bg-light, surfaces, body text, accent).
+     ────────────────────────────────────────────────────────────────────────── */
+  --color-bg-light:  var(--brand-teal-50);
+  --color-surface:   var(--brand-slate-50);
+  --color-text-body: var(--brand-slate-700);
+  --color-accent:    var(--brand-teal-500);
+
+  /* Wire semantic tokens into Bootstrap's own variables */
+  --bs-light-rgb: 242, 251, 250; /* brand-teal-50 (#F2FBFA) as RGB triplet */
+  --bs-primary-rgb: 37, 58, 71; /* brand-slate-700 (#253A47) as RGB triplet */
+  --bs-dark-rgb: 37, 58, 71;    /* brand-slate-700 (#253A47) as RGB triplet */
+}
 
 /* Ensure the app fills the full viewport height so the sidebar stretches */
 html,
 body {
   height: 100%;
   margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Status badge overrides — Bootstrap doesn't have these exact semantic colors */
@@ -21,6 +70,31 @@ body {
 .badge-complete {
   background-color: #6c757d; /* Bootstrap secondary grey */
   color: #fff;
+}
+
+/* Gradient icon utility — applies a teal-200 → teal-600 gradient to icon fonts */
+.icon-gradient {
+  font-size: 32px;
+  background: linear-gradient(135deg, var(--brand-teal-200), var(--brand-teal-600));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Primary button — override Bootstrap's component-scoped tokens */
+.btn-primary {
+  --bs-btn-bg:                var(--brand-slate-700);
+  --bs-btn-border-color:      var(--brand-slate-700);
+  --bs-btn-hover-bg:          var(--brand-slate-800);
+  --bs-btn-hover-border-color: var(--brand-slate-800);
+  --bs-btn-active-bg:         var(--brand-slate-900);
+  --bs-btn-active-border-color: var(--brand-slate-900);
+}
+
+/* Sidenav active item — override Bootstrap's list-group active tokens */
+.list-group-item.active {
+  --bs-list-group-active-bg:            var(--brand-slate-700);
+  --bs-list-group-active-border-color:  var(--brand-slate-700);
 }
 
 /* ag-Grid: give the grid a defined height so rows are visible */
