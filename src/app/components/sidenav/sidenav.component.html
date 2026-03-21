@@ -9,7 +9,7 @@
       *ngFor="let item of navItems"
       class="list-group-item list-group-item-action d-flex align-items-center gap-2 border-0 px-3 py-2"
       [class.active]="item.label === activeItem"
-      [class.text-primary]="item.label === activeItem"
+      [class.text-light]="item.label === activeItem"
       [class.fw-semibold]="item.label === activeItem"
       (click)="setActive(item.label)"
       style="cursor: pointer;"
