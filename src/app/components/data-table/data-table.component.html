@@ -1,0 +1,12 @@
+<!-- ag-Grid table wrapped in a sized container -->
+<!-- .grid-wrapper provides the fixed height defined in styles.css -->
+<div class="grid-wrapper ag-theme-alpine">
+  <ag-grid-angular
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [animateRows]="true"
+    (gridReady)="onGridReady($event)"
+    style="height: 100%; width: 100%;"
+  />
+</div>

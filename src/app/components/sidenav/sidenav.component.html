@@ -1,0 +1,22 @@
+<!-- Vertical sidebar using Bootstrap list-group as a nav -->
+<div class="d-flex flex-column bg-white border-end h-100 py-3" style="width: 220px; min-width: 220px;">
+
+  <p class="text-uppercase text-muted small fw-semibold px-3 mb-2">Menu</p>
+
+  <!-- list-group-flush removes outer borders; each item is a button for accessibility -->
+  <ul class="list-group list-group-flush">
+    <li
+      *ngFor="let item of navItems"
+      class="list-group-item list-group-item-action d-flex align-items-center gap-2 border-0 px-3 py-2"
+      [class.active]="item.label === activeItem"
+      [class.text-primary]="item.label === activeItem"
+      [class.fw-semibold]="item.label === activeItem"
+      (click)="setActive(item.label)"
+      style="cursor: pointer;"
+    >
+      <i class="bi {{ item.icon }} fs-5"></i>
+      {{ item.label }}
+    </li>
+  </ul>
+
+</div>

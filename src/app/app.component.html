@@ -1,0 +1,66 @@
+<!--
+  app.component.html — Shell / composition template
+  ──────────────────────────────────────────────────
+  This template is the only place where the overall page layout is defined.
+  It composes child components and passes data down via property bindings.
+
+  Layout:
+    ┌────────────────────────────────────────┐
+    │  <app-header>  (full width, sticky)    │
+    ├──────────┬─────────────────────────────┤
+    │          │  Stats cards row (3 cards)  │
+    │ Sidenav  ├─────────────────────────────┤
+    │          │  ag-Grid data table         │
+    └──────────┴─────────────────────────────┘
+-->
+
+<!-- Header spans the full width at the top -->
+<app-header></app-header>
+
+<!-- Below the header: sidebar + main content side by side -->
+<!-- vh-100 minus navbar height; overflow-hidden prevents double scrollbars -->
+<div class="d-flex" style="height: calc(100vh - 56px); overflow: hidden;">
+
+  <!-- ── Sidenav (fixed width, full height, scrolls independently) ──────── -->
+  <app-sidenav></app-sidenav>
+
+  <!-- ── Main content area (fills remaining width, scrolls vertically) ──── -->
+  <main class="flex-grow-1 overflow-auto bg-light p-4">
+
+    <!-- Page heading -->
+    <div class="mb-4">
+      <h5 class="fw-bold mb-0">Dashboard</h5>
+      <p class="text-muted small mb-0">Welcome back — here's what's happening.</p>
+    </div>
+
+    <!-- ── Stats cards row ──────────────────────────────────────────────── -->
+    <!--
+      *ngFor iterates over statsCards and renders one StatsCardComponent per item.
+      [card]="stat" is one-way property binding: data flows parent → child.
+    -->
+    <div class="row g-3 mb-4">
+      <div class="col-12 col-md-4" *ngFor="let stat of statsCards">
+        <app-stats-card [card]="stat"></app-stats-card>
+      </div>
+    </div>
+
+    <!-- ── Projects table section ────────────────────────────────────────── -->
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-white border-bottom d-flex align-items-center justify-content-between py-3">
+        <h6 class="mb-0 fw-semibold">All Projects</h6>
+        <!-- Placeholder action button — wired to nothing in this reference app -->
+        <button class="btn btn-primary btn-sm">
+          <i class="bi bi-plus-lg me-1"></i>New Project
+        </button>
+      </div>
+      <div class="card-body p-0">
+        <!--
+          [rowData]="projects" passes the full projects array into the table.
+          The DataTableComponent owns all column definitions and grid config.
+        -->
+        <app-data-table [rowData]="projects"></app-data-table>
+      </div>
+    </div>
+
+  </main>
+</div>

@@ -1,0 +1,30 @@
+/* Global styles — keep minimal; Bootstrap utilities handle most styling */
+
+/* Ensure the app fills the full viewport height so the sidebar stretches */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Status badge overrides — Bootstrap doesn't have these exact semantic colors */
+.badge-active {
+  background-color: #198754; /* Bootstrap success green */
+  color: #fff;
+}
+
+.badge-on-hold {
+  background-color: #ffc107; /* Bootstrap warning yellow */
+  color: #212529;            /* dark text for contrast on yellow */
+}
+
+.badge-complete {
+  background-color: #6c757d; /* Bootstrap secondary grey */
+  color: #fff;
+}
+
+/* ag-Grid: give the grid a defined height so rows are visible */
+.grid-wrapper {
+  height: 420px;
+  width: 100%;
+}
