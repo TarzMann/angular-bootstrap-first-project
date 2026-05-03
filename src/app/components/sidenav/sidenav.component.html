@@ -1,13 +1,13 @@
 <!-- Vertical sidebar using Bootstrap list-group as a nav -->
-<div class="d-flex flex-column bg-white border-end h-100 py-3" style="width: 220px; min-width: 220px;">
+<div class="d-flex flex-column bg-white border-0 h-100 py-3 p-2-5" style="width: 220px; min-width: 220px;">
 
-  <p class="text-uppercase text-muted small fw-semibold px-3 mb-2">Menu</p>
+  <p class="text-uppercase color-text-body small fw-semibold px-4 mt-3 mb-4">Menu</p>
 
-  <!-- list-group-flush removes outer borders; each item is a button for accessibility -->
-  <ul class="list-group list-group-flush">
+  <!-- removed list-group-flush to created rounded buttons for each item -->
+  <ul class="list-group">
     <li
       *ngFor="let item of navItems"
-      class="list-group-item list-group-item-action d-flex align-items-center gap-2 border-0 px-3 py-2"
+      class="list-group-item list-group-item-action d-flex align-items-center gap-2 border-0 rounded-start-5 rounded-end-5 py-2 px-4 mb-2"
       [class.active]="item.label === activeItem"
       [class.text-light]="item.label === activeItem"
       [class.fw-semibold]="item.label === activeItem"
