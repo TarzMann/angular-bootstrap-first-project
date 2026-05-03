@@ -63,18 +63,45 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Status badge overrides — Bootstrap doesn't have these exact semantic colors */
 .badge-active {
-  background-color: #198754; /* Bootstrap success green */
+  background-color: #198754;
   color: #fff;
 }
 
 .badge-on-hold {
-  background-color: #ffc107; /* Bootstrap warning yellow */
-  color: #212529;            /* dark text for contrast on yellow */
+  background-color: #ffc107;
+  color: #212529;
 }
 
 .badge-complete {
-  background-color: #6c757d; /* Bootstrap secondary grey */
+  background-color: #6c757d;
   color: #fff;
+}
+
+/* Trend badges — soft background with dark semantic text */
+.badge-trend-up {
+  background-color: #DBFAEC;
+  color: #198754;
+}
+
+.badge-trend-down {
+  background-color: #FFE7E9;
+  color: #DC3545;
+}
+
+.badge-trend-neutral {
+  background-color: var(--brand-slate-100);
+  color: var(--brand-slate-600);
+}
+
+/* Icon badge — teal-100 background with teal-700 icon color */
+.icon-badge {
+  background-color: var(--brand-teal-100);
+  color: var(--brand-teal-700);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Gradient icon utility — applies a teal-200 → teal-600 gradient to icon fonts */
