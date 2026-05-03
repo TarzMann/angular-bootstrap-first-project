@@ -97,8 +97,52 @@ body {
   --bs-list-group-active-border-color:  var(--brand-slate-700);
 }
 
+.list-group-item.active .bi {
+  color: var(--brand-teal-100) !important;
+}
+
 /* ag-Grid: give the grid a defined height so rows are visible */
 .grid-wrapper {
   height: 420px;
   width: 100%;
 }
+
+/* ─── Custom Spacing Extensions ─────────────────────────────────────────────
+   Fills gaps in Bootstrap's spacer scale. Mirrors Bootstrap's !important
+   pattern and uses logical properties (inline/block) for RTL compatibility.
+   Responsive variants (sm/md/lg/xl/xxl) not included — add if needed.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* 2-5: 0.75rem (12px) — between steps 2 and 3 */
+.m-2-5  { margin: 0.75rem !important; }
+.mt-2-5 { margin-top: 0.75rem !important; }
+.mb-2-5 { margin-bottom: 0.75rem !important; }
+.ms-2-5 { margin-inline-start: 0.75rem !important; }
+.me-2-5 { margin-inline-end: 0.75rem !important; }
+.mx-2-5 { margin-inline: 0.75rem !important; }
+.my-2-5 { margin-block: 0.75rem !important; }
+
+.p-2-5  { padding: 0.75rem !important; }
+.pt-2-5 { padding-top: 0.75rem !important; }
+.pb-2-5 { padding-bottom: 0.75rem !important; }
+.ps-2-5 { padding-inline-start: 0.75rem !important; }
+.pe-2-5 { padding-inline-end: 0.75rem !important; }
+.px-2-5 { padding-inline: 0.75rem !important; }
+.py-2-5 { padding-block: 0.75rem !important; }
+
+/* 4-5: 2rem (32px) — between steps 4 and 5 */
+.m-4-5  { margin: 2rem !important; }
+.mt-4-5 { margin-top: 2rem !important; }
+.mb-4-5 { margin-bottom: 2rem !important; }
+.ms-4-5 { margin-inline-start: 2rem !important; }
+.me-4-5 { margin-inline-end: 2rem !important; }
+.mx-4-5 { margin-inline: 2rem !important; }
+.my-4-5 { margin-block: 2rem !important; }
+
+.p-4-5  { padding: 2rem !important; }
+.pt-4-5 { padding-top: 2rem !important; }
+.pb-4-5 { padding-bottom: 2rem !important; }
+.ps-4-5 { padding-inline-start: 2rem !important; }
+.pe-4-5 { padding-inline-end: 2rem !important; }
+.px-4-5 { padding-inline: 2rem !important; }
+.py-4-5 { padding-block: 2rem !important; }
