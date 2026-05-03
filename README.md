@@ -26,7 +26,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-Progress/goals:
+## Progress/goals:
+
 - Set up simple one page Angular + Bootstrap + Ag-grid site using Claude Code + Cursor to understand structure, layout and dependencies.
 - Create mini design style system and redesign page in Figma (more freedom to explore styles).
 - Adjust initial page to match revised style staying as close as possible to Bootstrap utility classes.
