@@ -56,6 +56,11 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+/* Global heading color — all headings use brand slate-700 by default */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-body);
+}
+
 /* Status badge overrides — Bootstrap doesn't have these exact semantic colors */
 .badge-active {
   background-color: #198754; /* Bootstrap success green */

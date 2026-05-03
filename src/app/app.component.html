@@ -26,11 +26,11 @@
 
   <!-- ── Main content area (fills remaining width, scrolls vertically) ──── -->
   <main class="flex-grow-1 overflow-auto bg-light p-4">
-
+    <div class="container-fluid px-0" style="max-width: 1080px;">
     <!-- Page heading -->
-    <div class="mb-4">
-      <h5 class="fw-bold mb-0">Dashboard</h5>
-      <p class="text-muted small mb-0">Welcome back — here's what's happening.</p>
+    <div class="mb-3">
+      <h5 class="fw-semibold lh-sm mb-0">Dashboard</h5>
+      <p class="color-text-body small mb-0">Welcome back — here's what's happening.</p>
     </div>
 
     <!-- ── Stats cards row ──────────────────────────────────────────────── -->
@@ -38,18 +38,18 @@
       *ngFor iterates over statsCards and renders one StatsCardComponent per item.
       [card]="stat" is one-way property binding: data flows parent → child.
     -->
-    <div class="row g-3 mb-4">
+    <div class="row g-3 mb-4-5">
       <div class="col-12 col-md-4" *ngFor="let stat of statsCards">
         <app-stats-card [card]="stat"></app-stats-card>
       </div>
     </div>
 
     <!-- ── Projects table section ────────────────────────────────────────── -->
-    <div class="card shadow-sm border-0">
-      <div class="card-header bg-white border-bottom d-flex align-items-center justify-content-between py-3">
-        <h6 class="mb-0 fw-semibold">All Projects</h6>
+    <div class="card border-0 rounded-top-4 overflow-hidden">
+      <div class="card-header bg-white d-flex align-items-center justify-content-between py-3 px-4">
+        <h6 class="mb-0 fw-bold text-uppercase">All Projects</h6> <!-- would prefer this was 14px for all table headers -->
         <!-- Placeholder action button — wired to nothing in this reference app -->
-        <button class="btn btn-primary btn-sm">
+        <button class="btn btn-primary btn-sm rounded-start-5 rounded-end-5 py-2 px-3">
           <i class="bi bi-plus-lg me-1"></i>New Project
         </button>
       </div>
@@ -61,6 +61,7 @@
         <app-data-table [rowData]="projects"></app-data-table>
       </div>
     </div>
+  </div>
 
   </main>
 </div>
