@@ -63,18 +63,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Status badge overrides — Bootstrap doesn't have these exact semantic colors */
 .badge-active {
-  background-color: #198754;
-  color: #fff;
+  background-color: #E1F7E7;
+  color: #14782E;
 }
 
 .badge-on-hold {
-  background-color: #ffc107;
-  color: #212529;
+  background-color: #FFEDC7;
+  color: #FF9000;
 }
 
 .badge-complete {
-  background-color: #6c757d;
-  color: #fff;
+  background-color: var(--brand-slate-50);
+  color: var(--brand-slate-500);
 }
 
 /* Trend badges — soft background with dark semantic text */
@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .badge-trend-neutral {
   background-color: var(--brand-slate-100);
-  color: var(--brand-slate-600);
+  color: var(--brand-slate-500);
 }
 
 /* Icon badge — teal-100 background with teal-700 icon color */
@@ -123,6 +123,20 @@ h1, h2, h3, h4, h5, h6 {
   --bs-btn-active-border-color: var(--brand-slate-900);
 }
 
+/* Icon-only button — slate tones, no visible border */
+.btn-icon {
+  --bs-btn-color:              var(--brand-slate-500);
+  --bs-btn-bg:                 transparent;
+  --bs-btn-border-color:       transparent;
+  --bs-btn-hover-color:        var(--brand-slate-700);
+  --bs-btn-hover-bg:           var(--brand-slate-50);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color:       var(--brand-slate-700);
+  --bs-btn-active-bg:          var(--brand-slate-100);
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-focus-shadow-rgb:   0, 0, 0;
+}
+
 /* Sidenav active item — override Bootstrap's list-group active tokens */
 .list-group-item.active {
   --bs-list-group-active-bg:            var(--brand-slate-700);
@@ -137,6 +151,24 @@ h1, h2, h3, h4, h5, h6 {
 .grid-wrapper {
   height: 420px;
   width: 100%;
+}
+
+.ag-theme-alpine .ag-root-wrapper {
+  border: none;
+}
+
+.ag-theme-alpine .ag-header {
+  background-color: #ffffff;
+}
+
+.ag-theme-alpine {
+  --ag-header-column-separator-display: none;
+  --ag-header-column-resize-handle-display: none;
+}
+
+.ag-theme-alpine .ag-header-cell-menu-button,
+.ag-theme-alpine .ag-header-cell-filter-button {
+  display: none !important;
 }
 
 /* ─── Custom Spacing Extensions ─────────────────────────────────────────────

@@ -1,12 +1,60 @@
-<!-- ag-Grid table wrapped in a sized container -->
-<!-- .grid-wrapper provides the fixed height defined in styles.css -->
-<div class="grid-wrapper ag-theme-alpine">
-  <ag-grid-angular
-    [rowData]="rowData"
-    [columnDefs]="columnDefs"
-    [defaultColDef]="defaultColDef"
-    [animateRows]="true"
-    (gridReady)="onGridReady($event)"
-    style="height: 100%; width: 100%;"
-  />
+<div class="card border-0 rounded-top-4">
+  <div class="card-header bg-white border-bottom-0 rounded-top-4 d-flex align-items-center justify-content-between py-3 px-4">
+    <h6 class="mb-0 fw-bold text-uppercase" style="font-size: 14px;">All Projects</h6>
+    <div class="d-flex align-items-center gap-2">
+
+      <button class="btn btn-primary btn-sm rounded-start-5 rounded-end-5 py-2 px-3">
+        <i class="bi bi-plus-lg me-1" style="color: var(--brand-teal-100);"></i>New Project
+      </button>
+
+      <span class="border-start border-secondary-subtle align-self-stretch mx-1"></span>
+
+      <!-- Settings cog: quick status filters -->
+      <div class="dropdown" [class.show]="gearOpen">
+        <button class="btn btn-icon d-flex align-items-center justify-content-center p-0"
+                style="width: 32px; height: 32px;"
+                type="button"
+                (click)="toggleGear($event)"
+                [attr.aria-expanded]="gearOpen">
+          <i class="bi bi-gear" style="font-size: 20px;"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" [class.show]="gearOpen">
+          <li><h6 class="dropdown-header small">Filter by Status</h6></li>
+          <li><button class="dropdown-item" type="button" (click)="setStatusFilter('Active')">Active</button></li>
+          <li><button class="dropdown-item" type="button" (click)="setStatusFilter('On Hold')">On Hold</button></li>
+          <li><button class="dropdown-item" type="button" (click)="setStatusFilter('Complete')">Complete</button></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><button class="dropdown-item text-danger" type="button" (click)="clearFilters()">Clear Filters</button></li>
+        </ul>
+      </div>
+
+      <!-- Ellipse: future table options -->
+      <div class="dropdown" [class.show]="ellipseOpen">
+        <button class="btn btn-icon d-flex align-items-center justify-content-center p-0"
+                style="width: 32px; height: 32px;"
+                type="button"
+                (click)="toggleEllipse($event)"
+                [attr.aria-expanded]="ellipseOpen">
+          <i class="bi bi-three-dots" style="font-size: 20px;"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" [class.show]="ellipseOpen">
+          <li><span class="dropdown-item text-muted small">No options yet</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card-body p-0">
+    <div class="grid-wrapper ag-theme-alpine">
+      <ag-grid-angular
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef"
+        [animateRows]="true"
+        (gridReady)="onGridReady($event)"
+        style="height: 100%; width: 100%;"
+      />
+    </div>
+  </div>
 </div>
