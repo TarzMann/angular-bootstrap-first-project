@@ -16,16 +16,16 @@
     <!-- Trend indicator (top-right corner) -->
     <div>
       <!-- Trend up: green arrow -->
-      <span *ngIf="card.trend === 'up'" class="badge badge-trend-up">
-        <i class="bi bi-arrow-up-short"></i> Up
+      <span *ngIf="card.trend === 'up'" class="badge badge-trend-up text-uppercase">
+        Up <i class="bi bi-arrow-up-short"></i>
       </span>
       <!-- Trend down: red arrow -->
-      <span *ngIf="card.trend === 'down'" class="badge badge-trend-down">
-        <i class="bi bi-arrow-down-short"></i> Down
+      <span *ngIf="card.trend === 'down'" class="badge badge-trend-down text-uppercase">
+        Down <i class="bi bi-arrow-down-short"></i>
       </span>
       <!-- Neutral: grey dash -->
-      <span *ngIf="card.trend === 'neutral'" class="badge badge-trend-neutral">
-        <i class="bi bi-dash"></i> Stable
+      <span *ngIf="card.trend === 'neutral'" class="badge badge-trend-neutral text-uppercase">
+        Stable <i class="bi bi-dash"></i>
       </span>
     </div>
 
