@@ -90,7 +90,7 @@ export class DataTableComponent implements OnChanges {
           status === 'Active'   ? 'badge-active'  :
           status === 'On Hold'  ? 'badge-on-hold' :
                                   'badge-complete';
-        return `<span class="badge ${cssClass}">${status}</span>`;
+        return `<span class="badge rounded-pill ${cssClass}">${status}</span>`;
       },
     },
     {

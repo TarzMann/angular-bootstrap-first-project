@@ -63,18 +63,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Status badge overrides — Bootstrap doesn't have these exact semantic colors */
 .badge-active {
-  background-color: #198754;
-  color: #fff;
+  background-color: #E1F7E7;
+  color: #14782E;
 }
 
 .badge-on-hold {
-  background-color: #ffc107;
-  color: #212529;
+  background-color: #FFEDC7;
+  color: #FF9000;
 }
 
 .badge-complete {
-  background-color: #6c757d;
-  color: #fff;
+  background-color: var(--brand-slate-50);
+  color: var(--brand-slate-500);
 }
 
 /* Trend badges — soft background with dark semantic text */
@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .badge-trend-neutral {
   background-color: var(--brand-slate-100);
-  color: var(--brand-slate-600);
+  color: var(--brand-slate-500);
 }
 
 /* Icon badge — teal-100 background with teal-700 icon color */
