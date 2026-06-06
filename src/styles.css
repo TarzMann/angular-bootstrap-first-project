@@ -139,6 +139,24 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+.ag-theme-alpine .ag-root-wrapper {
+  border: none;
+}
+
+.ag-theme-alpine .ag-header {
+  background-color: #ffffff;
+}
+
+.ag-theme-alpine {
+  --ag-header-column-separator-display: none;
+  --ag-header-column-resize-handle-display: none;
+}
+
+.ag-theme-alpine .ag-header-cell-menu-button,
+.ag-theme-alpine .ag-header-cell-filter-button {
+  display: none !important;
+}
+
 /* ─── Custom Spacing Extensions ─────────────────────────────────────────────
    Fills gaps in Bootstrap's spacer scale. Mirrors Bootstrap's !important
    pattern and uses logical properties (inline/block) for RTL compatibility.
