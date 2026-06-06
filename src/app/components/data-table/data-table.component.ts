@@ -59,7 +59,9 @@ export class DataTableComponent implements OnChanges {
     {
       field: 'id',
       headerName: 'ID',
-      width: 70,
+      width: 55,
+      minWidth: 55,
+      suppressSizeToFit: true,
       filter: 'agNumberColumnFilter',
     },
     {
@@ -111,6 +113,8 @@ export class DataTableComponent implements OnChanges {
       field: 'budget',
       headerName: 'Budget',
       width: 130,
+      type: 'rightAligned',
+      cellStyle: { fontWeight: 600 },
       filter: 'agNumberColumnFilter',
       valueFormatter: (params: ValueFormatterParams<Project>) =>
         params.value != null
